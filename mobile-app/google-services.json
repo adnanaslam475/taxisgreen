@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "922726283886",
+    "firebase_url": "https://taxisgreen-finale-default-rtdb.firebaseio.com",
+    "project_id": "taxisgreen-finale",
+    "storage_bucket": "taxisgreen-finale.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922726283886:android:51e61b3873703bbc23c47f",
+        "android_client_info": {
+          "package_name": "com.taxis.green"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922726283886-rqked8irk5462gvkkaqfuem5ph8eg5un.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASle9hIaVkH2f0stFPJDjvEUNjNf3ygoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922726283886-rqked8irk5462gvkkaqfuem5ph8eg5un.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "922726283886-rsskvkoc1uinun25gb3o8adi3tu3cpe9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.taxis.green"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

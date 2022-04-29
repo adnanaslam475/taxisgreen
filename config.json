@@ -1,0 +1,16 @@
+{
+  "app_name": "TaxisGreen",
+  "app_description": "Application de géolocalisation de taxis pour le transport de particulier soucieux de l’environnement. ",
+  "app_identifier": "com.taxis.green",
+  "ios_app_version": "1.0.0",
+  "android_app_version": 100,
+  "facebookAppId": "681216216218913",
+  "firebaseProjectId": "taxisgreen-finale",
+  "googleApiKeys": {
+    "ios": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
+    "android": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
+    "web": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
+    "server": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY"
+  },
+  "CodeCanyon_Purchase_Code": "904d3fda-ea3a-4860-b966-03b02e04ece0"
+}
