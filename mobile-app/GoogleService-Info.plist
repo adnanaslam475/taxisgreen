@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>922726283886-rsskvkoc1uinun25gb3o8adi3tu3cpe9.apps.googleusercontent.com</string>
+	<string>238659965996-hporg6o3f02gqv432tt3dg8nr86goscf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.922726283886-rsskvkoc1uinun25gb3o8adi3tu3cpe9</string>
+	<string>com.googleusercontent.apps.238659965996-hporg6o3f02gqv432tt3dg8nr86goscf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAfvn_G-aOjApuTu1F2MM1ZDw3WidH49zY</string>
+	<string>AIzaSyAmlfToWbSddy06Qmf4u14hWUF92lRRy-Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>922726283886</string>
+	<string>238659965996</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.taxis.green</string>
+	<string>com.scoutrans</string>
 	<key>PROJECT_ID</key>
-	<string>taxisgreen-finale</string>
+	<string>scoutrans-ca2a3</string>
 	<key>STORAGE_BUCKET</key>
-	<string>taxisgreen-finale.appspot.com</string>
+	<string>scoutrans-ca2a3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:922726283886:ios:895fa53ccc06428823c47f</string>
+	<string>1:238659965996:ios:bb10ee8cbdf9833e282d89</string>
 	<key>DATABASE_URL</key>
-	<string>https://taxisgreen-finale-default-rtdb.firebaseio.com</string>
+	<string>https://scoutrans-ca2a3-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

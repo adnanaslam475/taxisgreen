@@ -12,7 +12,7 @@ function CircularLoading() {
       justify="center"
       style={{ minHeight: '100vh' }}
     >
-      <CircularProgress/>
+      <CircularProgress />
     </Grid>
   )
 }

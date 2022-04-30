@@ -1,7 +1,7 @@
 export const fetchPlacesAutocomplete = (searchKeyword, country) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-autocomplete`, {
                 method: 'POST',
                 headers: {
@@ -15,17 +15,17 @@ export const fetchPlacesAutocomplete = (searchKeyword, country) => (firebase) =>
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if(json && json.searchResults) {
-                    resolve(json.searchResults);
-                }else{
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json && json.searchResults) {
+                        resolve(json.searchResults);
+                    } else {
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });
@@ -33,9 +33,9 @@ export const fetchPlacesAutocomplete = (searchKeyword, country) => (firebase) =>
 }
 
 export const fetchCoordsfromPlace = (place_id) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-getcoords`, {
                 method: 'POST',
                 headers: {
@@ -48,17 +48,17 @@ export const fetchCoordsfromPlace = (place_id) => (firebase) => {
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if(json && json.coords) {
-                    resolve(json.coords);
-                }else{
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json && json.coords) {
+                        resolve(json.coords);
+                    } else {
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });
@@ -67,9 +67,9 @@ export const fetchCoordsfromPlace = (place_id) => (firebase) => {
 
 
 export const fetchAddressfromCoords = (latlng) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-getaddress`, {
                 method: 'POST',
                 headers: {
@@ -82,17 +82,17 @@ export const fetchAddressfromCoords = (latlng) => (firebase) => {
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if(json && json.address) {
-                    resolve(json.address);
-                }else{
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json && json.address) {
+                        resolve(json.address);
+                    } else {
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });
@@ -100,9 +100,9 @@ export const fetchAddressfromCoords = (latlng) => (firebase) => {
 }
 
 export const getRouteDetails = (startLoc, destLoc) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-getroute`, {
                 method: 'POST',
                 headers: {
@@ -116,18 +116,18 @@ export const getRouteDetails = (startLoc, destLoc) => (firebase) => {
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if (json.hasOwnProperty('distance')) {
-                    resolve(json);
-                }else{
-                    console.log(json.error);
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json.hasOwnProperty('distance')) {
+                        resolve(json);
+                    } else {
+                        console.log(json.error);
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });
@@ -135,9 +135,9 @@ export const getRouteDetails = (startLoc, destLoc) => (firebase) => {
 }
 
 export const getDriveTime = (startLoc, destLoc) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-getdrivetime`, {
                 method: 'POST',
                 headers: {
@@ -151,18 +151,18 @@ export const getDriveTime = (startLoc, destLoc) => (firebase) => {
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if (json.hasOwnProperty('distance_in_km')) {
-                    resolve(json);
-                }else{
-                    console.log(json.error);
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json.hasOwnProperty('distance_in_km')) {
+                        resolve(json);
+                    } else {
+                        console.log(json.error);
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });
@@ -170,9 +170,9 @@ export const getDriveTime = (startLoc, destLoc) => (firebase) => {
 }
 
 export const getMultiLocTime = (startLoc, destLoc, waypoints) => (firebase) => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         const { auth, config } = firebase;
-        auth.currentUser.getIdToken(true).then((token)=>{
+        auth.currentUser.getIdToken(true).then((token) => {
             fetch(`https://${config.projectId}.web.app/googleapis-getmultiloctime`, {
                 method: 'POST',
                 headers: {
@@ -187,18 +187,18 @@ export const getMultiLocTime = (startLoc, destLoc, waypoints) => (firebase) => {
             }).then(response => {
                 return response.json();
             })
-            .then(json => {
-                if (json.hasOwnProperty('distance_in_km')) {
-                    resolve(json);
-                }else{
-                    console.log(json.error);
-                    reject(json.error);
-                }
-            }).catch(error=>{
-                console.log(error);
-                reject("Fetch Call Error")
-            })
-        }).catch((error)=>{
+                .then(json => {
+                    if (json.hasOwnProperty('distance_in_km')) {
+                        resolve(json);
+                    } else {
+                        console.log(json.error);
+                        reject(json.error);
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    reject("Fetch Call Error")
+                })
+        }).catch((error) => {
             console.log(error);
             reject("Unable to get user token");
         });

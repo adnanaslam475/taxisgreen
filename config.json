@@ -1,16 +1,16 @@
 {
-  "app_name": "TaxisGreen",
+  "app_name": "Scoutrans",
   "app_description": "Application de géolocalisation de taxis pour le transport de particulier soucieux de l’environnement. ",
-  "app_identifier": "com.taxis.green",
+  "app_identifier": "com.scoutrans",
   "ios_app_version": "1.0.0",
   "android_app_version": 100,
   "facebookAppId": "681216216218913",
-  "firebaseProjectId": "taxisgreen-finale",
+  "firebaseProjectId": "scoutrans-ca2a3",
   "googleApiKeys": {
-    "ios": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
-    "android": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
-    "web": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
-    "server": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY"
+    "ios": "AIzaSyAuM7YkroV2URQ4KKpbJXRH9AuAcQJiNIg",
+    "android": "AIzaSyAuM7YkroV2URQ4KKpbJXRH9AuAcQJiNIg",
+    "web": "AIzaSyAuM7YkroV2URQ4KKpbJXRH9AuAcQJiNIg",
+    "server": "AIzaSyAuM7YkroV2URQ4KKpbJXRH9AuAcQJiNIg"
   },
   "CodeCanyon_Purchase_Code": "904d3fda-ea3a-4860-b966-03b02e04ece0"
 }

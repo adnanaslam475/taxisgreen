@@ -8,7 +8,6 @@ export const MinutesPassed = (date) => {
 export const GetDateString = (date) => {
     let d = null;
     d = date ? new Date(date) : new Date();
-
     let month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear(),
@@ -22,6 +21,5 @@ export const GetDateString = (date) => {
         hours = '0' + hours.toString();
     if (mins >= 0 & mins <= 9)
         mins = '0' + mins.toString();
-
     return [year, month, day].join('-') + 'T' + [hours, mins].join(':');
 }

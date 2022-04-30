@@ -1,11 +1,11 @@
 export const FirebaseConfig = {
-	"projectId": "taxisgreen-finale",
-	"appId": "1:922726283886:web:a493f20567c210dc23c47f",
-	"databaseURL": "https://taxisgreen-finale-default-rtdb.firebaseio.com",
-	"storageBucket": "taxisgreen-finale.appspot.com",
+	"projectId": "scoutrans-ca2a3",
+	"appId": "1:238659965996:web:676e751aed520f97282d89",
+	"databaseURL": "https://scoutrans-ca2a3-default-rtdb.firebaseio.com",
+	"storageBucket": "scoutrans-ca2a3.appspot.com",
 	"locationId": "us-central",
-	"apiKey": "AIzaSyCeZOvek3VTxGKP08df9ySJcuTgXUzQQAY",
-	"authDomain": "taxisgreen-finale.firebaseapp.com",
-	"messagingSenderId": "922726283886",
-	"measurementId": "G-756CVT2G4X"
+	"apiKey": "AIzaSyAuM7YkroV2URQ4KKpbJXRH9AuAcQJiNIg",
+	"authDomain": "scoutrans-ca2a3.firebaseapp.com",
+	"messagingSenderId": "238659965996",
+	"measurementId": "G-MJBQ007QED"
 };

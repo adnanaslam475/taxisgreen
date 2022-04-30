@@ -1,4 +1,4 @@
-import React,{ useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import CircularLoading from "../components/CircularLoading";
 import { useSelector, useDispatch } from "react-redux";
 import { FirebaseContext } from 'common';
@@ -11,7 +11,7 @@ function AuthLoading(props) {
     const {
         fetchUser,
         fetchCarTypes,
-        fetchSettings, 
+        fetchSettings,
         fetchBookings,
         fetchCancelReasons,
         fetchPromos,
@@ -26,72 +26,73 @@ function AuthLoading(props) {
     } = api;
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
-    const languagedata = useSelector(state => state.languagedata); 
+    console.log('authsload',auth.loading);
+    const languagedata = useSelector(state => state.languagedata);
     const settingsdata = useSelector(state => state.settingsdata);
 
-    useEffect(()=>{
-        dispatch(fetchLanguages());   
+    useEffect(() => {
+        dispatch(fetchLanguages());
         dispatch(fetchCarTypes());
         dispatch(fetchSettings());
-    },[dispatch,fetchLanguages,fetchCarTypes,fetchSettings]);
+    }, [dispatch, fetchLanguages, fetchCarTypes, fetchSettings]);
 
-    useEffect(()=>{
-        if(languagedata.langlist){
+    useEffect(() => {
+        if (languagedata.langlist) {
             for (const value of Object.values(languagedata.langlist)) {
                 i18n.addResourceBundle(value.langLocale, 'translations', value.keyValuePairs);
             }
             dispatch(fetchUser());
         }
-    },[languagedata,dispatch,fetchUser])
+    }, [languagedata, dispatch, fetchUser])
 
-    useEffect(()=>{
-        if(settingsdata.settings){
+    useEffect(() => {
+        if (settingsdata.settings) {
             document.title = settingsdata.settings.appName
         }
-    },[settingsdata.settings])
+    }, [settingsdata.settings])
 
-    useEffect(()=>{
-        if(auth.info){
-            if(auth.info.profile){
+    useEffect(() => {
+        if (auth.info) {
+            if (auth.info.profile) {
                 let role = auth.info.profile.usertype;
-                if(role === 'rider'){
-                    dispatch(fetchBookings(auth.info.uid,role));
+                if (role === 'rider') {
+                    dispatch(fetchBookings(auth.info.uid, role));
                     dispatch(fetchPaymentMethods());
                     dispatch(fetchCancelReasons());
                     dispatch(fetchUsers());
                 }
-                else if(role === 'driver'){
-                    dispatch(fetchBookings(auth.info.uid,role));
+                else if (role === 'driver') {
+                    dispatch(fetchBookings(auth.info.uid, role));
                 }
-                else if(role === 'admin'){
+                else if (role === 'admin') {
                     dispatch(fetchUsers());
-                    dispatch(fetchBookings(auth.info.uid,role));
+                    dispatch(fetchBookings(auth.info.uid, role));
                     dispatch(fetchPromos());
-                    dispatch(fetchDriverEarnings(auth.info.uid,role));
+                    dispatch(fetchDriverEarnings(auth.info.uid, role));
                     dispatch(fetchNotifications());
                     dispatch(fetchEarningsReport());
                     dispatch(fetchCancelReasons());
                     dispatch(fetchWithdraws());
                     dispatch(fetchPaymentMethods());
                 }
-                else if(role === 'fleetadmin'){
+                else if (role === 'fleetadmin') {
                     dispatch(fetchUsers());
-                    dispatch(fetchBookings(auth.info.uid,role));
-                    dispatch(fetchDriverEarnings(auth.info.uid,role));
+                    dispatch(fetchBookings(auth.info.uid, role));
+                    dispatch(fetchDriverEarnings(auth.info.uid, role));
                 }
-                else{
+                else {
                     alert(t('not_valid_user_type'));
                     dispatch(signOut());
                 }
-            }else{
+            } else {
                 alert(t('user_issue_contact_admin'));
                 dispatch(signOut());
             }
         }
-    },[auth.info,dispatch,fetchBookings,fetchCancelReasons,fetchDriverEarnings,fetchEarningsReport,fetchNotifications,fetchPromos,fetchUsers,fetchWithdraws,signOut,fetchPaymentMethods,t]);
+    }, [auth.info, dispatch, fetchBookings, fetchCancelReasons, fetchDriverEarnings, fetchEarningsReport, fetchNotifications, fetchPromos, fetchUsers, fetchWithdraws, signOut, fetchPaymentMethods, t]);
 
     return (
-        auth.loading || !languagedata.langlist? <CircularLoading/>:props.children
+        auth.loading || !languagedata.langlist ? <CircularLoading /> : props.children
     )
 }
 

@@ -171,14 +171,14 @@ const FirebaseProvider = ({ config, appcat, children }) => {
         role === "rider"
           ? app.database().ref("bookings").orderByChild("customer").equalTo(uid)
           : role === "driver"
-          ? app.database().ref("bookings").orderByChild("driver").equalTo(uid)
-          : role === "fleetadmin"
-          ? app
-              .database()
-              .ref("bookings")
-              .orderByChild("fleetadmin")
-              .equalTo(uid)
-          : app.database().ref("bookings"),
+            ? app.database().ref("bookings").orderByChild("driver").equalTo(uid)
+            : role === "fleetadmin"
+              ? app
+                .database()
+                .ref("bookings")
+                .orderByChild("fleetadmin")
+                .equalTo(uid)
+              : app.database().ref("bookings"),
       chatRef: (bookingId) =>
         app.database().ref("chats/" + bookingId + "/messages"),
       withdrawRef: app.database().ref("withdraws/"),
